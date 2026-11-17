@@ -1,6 +1,6 @@
-# Digital Address Book
+# Contact Manager
 
-A small desktop address book built with **Python, Tkinter, SQLite and regular expressions**.
+A desktop contact management application built with **Python, Tkinter, SQLite and regular expressions**.
 
 ## Group members
 
