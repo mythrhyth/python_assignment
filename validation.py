@@ -15,9 +15,8 @@ Responsible for:
 import re
 
 
-# ---------------------------------------------------------------------------
 # 1. REGULAR EXPRESSIONS (Compiled Patterns)
-# ---------------------------------------------------------------------------
+
 
 # Name : Starts with an alphabet, allows letters, spaces, dots, hyphens, apostrophes (2-50 chars)
 NAME_RE = re.compile(r"^[A-Za-z][A-Za-z .'-]{1,49}$")
@@ -31,9 +30,9 @@ PHONE_RE = re.compile(r"^(\+\d{1,3})?\d{10}$")
 EMAIL_RE = re.compile(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$")
 
 
-# ---------------------------------------------------------------------------
+
 # 2. SANITIZATION & NORMALIZATION HELPERS
-# ---------------------------------------------------------------------------
+
 
 def normalize_phone(raw):
     """
@@ -51,9 +50,6 @@ def clean_name(raw):
     return " ".join(raw.split())
 
 
-# ---------------------------------------------------------------------------
-# 3. INDIVIDUAL FIELD VALIDATORS (Used for Real-Time UI Feedback)
-# ---------------------------------------------------------------------------
 
 def is_valid_name(text):
     """Check if the provided name matches NAME_RE after normalization."""
@@ -70,9 +66,7 @@ def is_valid_email(text):
     return bool(EMAIL_RE.match(text.strip().lower()))
 
 
-# ---------------------------------------------------------------------------
-# 4. CUSTOM EXCEPTION HIERARCHY
-# ---------------------------------------------------------------------------
+
 
 class AddressBookException(Exception):
     """Base class for domain-level exceptions in the application."""
@@ -94,9 +88,7 @@ class DuplicateError(AddressBookException):
         super().__init__(f"Phone number {phone} already belongs to '{name}'.")
 
 
-# ---------------------------------------------------------------------------
-# 5. DATA MODEL & COMPOSITE VALIDATOR
-# ---------------------------------------------------------------------------
+
 
 class Contact:
     """Represents a clean, validated Contact entity in the system."""
@@ -140,9 +132,7 @@ def validate_contact(name, phone, email):
     return clean_name(name), normalize_phone(phone.strip()), email.strip().lower()
 
 
-# ---------------------------------------------------------------------------
-# 6. DEMO / UNIT TEST (Presenter 1 can run: python validation.py)
-# ---------------------------------------------------------------------------
+
 if __name__ == "__main__":
     print("=" * 60)
     print("DEMO: Validation Engine & Regular Expressions (Person 1)")

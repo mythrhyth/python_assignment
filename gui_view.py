@@ -2,7 +2,6 @@
 gui_view.py
 -----------
 Module 3: UI Design System, Widget Styling & Responsive Layout
-Presenter: Person 3
 
 Responsible for:
 1. Visual design system (modern color palette and dynamic OS font fallbacks)
@@ -17,9 +16,9 @@ from tkinter import ttk
 from tkinter import font as tkfont
 from validation import is_valid_name, is_valid_phone, is_valid_email
 
-# ---------------------------------------------------------------------------
+
 # COLOR PALETTE & DESIGN SYSTEM TOKENS
-# ---------------------------------------------------------------------------
+
 PRIMARY, PRIMARY_DARK = "#4F46E5", "#4338CA"
 SUCCESS, SUCCESS_DARK = "#16A34A", "#15803D"
 DANGER, DANGER_DARK = "#DC2626", "#B91C1C"
@@ -282,9 +281,9 @@ class AddressBookView:
         ).grid(row=2, column=0, sticky="ew")
 
 
-# ---------------------------------------------------------------------------
-# 6. DEMO / PREVIEW (Presenter 3 can run: python gui_view.py)
-# ---------------------------------------------------------------------------
+
+# 6. DEMO / PREVIEW
+
 if __name__ == "__main__":
     print("=" * 60)
     print("DEMO: UI Layout & Design System Preview (Person 3)")

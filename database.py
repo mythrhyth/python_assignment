@@ -2,7 +2,6 @@
 database.py
 -----------
 Module 2: Database Management & Persistence Layer (SQLite)
-Presenter: Person 2
 
 Responsible for:
 1. SQLite connection and table schema creation with UNIQUE constraints
@@ -139,12 +138,12 @@ class AddressBookDB:
         self.conn.close()
 
 
-# ---------------------------------------------------------------------------
-# 6. DEMO / UNIT TEST (Presenter 2 can run: python database.py)
-# ---------------------------------------------------------------------------
+
+# 6. DEMO / UNIT TEST 
+
 if __name__ == "__main__":
     print("=" * 60)
-    print("DEMO: Database Layer & Persistence (Person 2)")
+    print("DEMO: Database Layer & Persistence")
     print("=" * 60)
 
     test_db_path = "demo_test.db"
